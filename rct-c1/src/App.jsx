@@ -9,7 +9,7 @@ export default function App() {
   const [err, setError] = useState(false);
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
-  const [salaryorder, setSalaryorder] = useState("asc");
+  const [salaryorder, setSalaryorder] = useState("ASC");
   
   
   useEffect(() => {
@@ -27,8 +27,8 @@ export default function App() {
         _page: page,
         _limit: 5,
       },
-      // url: "https://json-server-mocker-masai.herokuapp.com/candidat",
-      url: "http://localhost:8080/candidates",
+      url: "https://json-server-mocker-masai.herokuapp.com/candidat",
+      // url: "http://localhost:8080/candidates",
     })
       .then((res) => {
         // console.log(res.data);
@@ -44,12 +44,12 @@ export default function App() {
     <div className="App">
       <div>
         {loading && <div id="loading-container">...Loading</div>}
-        {salaryorder === "asc" ? (
+        {salaryorder === "ASC" ? (
           <Button
             id="SORT_BUTTON"
             title={`Sort by Descending Salary`}
             onClick={() =>
-              salaryorder ? setSalaryorder("desc") : setSalaryorder("asc")
+              salaryorder ? setSalaryorder("DESC") : setSalaryorder("ASC")
             }
           />
         ) : (
@@ -57,7 +57,7 @@ export default function App() {
             id="SORT_BUTTON"
             title={`Sort by Ascending Salary`}
             onClick={() =>
-              salaryorder ? setSalaryorder("asc") : setSalaryorder("desc")
+              salaryorder ? setSalaryorder("ASC") : setSalaryorder("DESC")
             }
           />
         )}
