@@ -27,7 +27,7 @@ export default function App() {
         _page: page,
         _limit: 5,
       },
-      url: "https://json-server-mocker-masai.herokuapp.com/candidat",
+      url: "https://json-server-mocker-masai.herokuapp.com/candidates",
       // url: "http://localhost:8080/candidates",
     })
       .then((res) => {
